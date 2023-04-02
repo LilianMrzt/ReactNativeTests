@@ -1,4 +1,4 @@
-package com.baseproject;
+package com.reactNativeTests;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

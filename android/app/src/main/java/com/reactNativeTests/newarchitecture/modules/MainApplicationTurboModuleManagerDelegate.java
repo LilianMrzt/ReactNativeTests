@@ -1,4 +1,4 @@
-package com.baseproject.newarchitecture.modules;
+package com.reactNativeTests.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
