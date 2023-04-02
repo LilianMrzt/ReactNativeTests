@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import I18n from '@app/i18n/i18n';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const App = () => {
 
@@ -15,6 +16,8 @@ const App = () => {
           <Text style={styles.text}>
               {I18n.t('Greeting')}
           </Text>
+          <Icon name="home" size={60}/>
+
         </View>
     </SafeAreaView>
   );
