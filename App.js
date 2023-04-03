@@ -1,45 +1,41 @@
-import React from 'react';
-import {
-    SafeAreaView,
-    Text,
-    View,
-} from 'react-native';
-import I18n from '@app/i18n/i18n';
+import * as React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {NavigationContainer} from "@react-navigation/native";
+import DrawerNavigation from "@app/ui/navigation/DrawerNavigation";
 
 const App = () => {
 
     return (
-        <SafeAreaView style={styles.background}>
-            <View>
-                <Text style={styles.text}>
-                    {I18n.t('Greeting')}
-                </Text>
-                <Icon name="home" size={60}/>
-                <Text>
-                    HAHAHAHA
-                </Text>
-            </View>
-        </SafeAreaView>
+        <NavigationContainer>
+            <DrawerNavigation/>
+        </NavigationContainer>
     );
 };
 
-const styles = EStyleSheet.create({
-    background:{
-        flex:1,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        color: '$textColor',
-        fontSize: '1.5rem',
-    },
-});
-
-EStyleSheet.build({ // always call EStyleSheet.build() even if you don't use global variables!
-    $textColor: '#0275d8',
+EStyleSheet.build({
+    $primary :'#00639b',
+    $onPrimary: '#ffffff',
+    $primaryContainer: '#cee5ff',
+    $onPrimaryContainer: '#001d33',
+    $secondary: '#51606f',
+    $onSecondary: '#ffffff',
+    $secondaryContainer: '#d5e4f7',
+    $onSecondaryContainer: '#0e1d2a',
+    $tertiary: '#68587a',
+    $onTertiary: '#ffffff',
+    $tertiaryContainer: '#eedbff',
+    $onTertiaryContainer: '#231533',
+    $error: '#ba1a1a',
+    $onError: '#ffffff',
+    $errorContainer: '#ffdad6',
+    $onErrorContainer: '#410002',
+    $background: '#fcfcff',
+    $onBackground: '#1a1c1e',
+    $surface: '#fcfcff',
+    $onSurface: '#1a1c1e',
+    $surfaceVariant : '#dee3eb',
+    $onSurfaceVariant :'#42474e',
+    //$outline : '#fff',
 });
 
 export default App;
