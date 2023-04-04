@@ -3,9 +3,9 @@ import {Text, TouchableOpacity} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import PropTypes from 'prop-types';
 
-const Material3Button = ({text}) => {
+const Material3Button = ({text, onButtonPressed}) => {
   return (
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={onButtonPressed}>
             <Text style={styles.text}>
                 {text}
             </Text>

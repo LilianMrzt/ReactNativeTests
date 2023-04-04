@@ -14,7 +14,7 @@ const HomeScreen = ({navigation}) => {
 
               <BigText text={'Explore the App'}/>
 
-              <View style={styles.column}>
+
 
                   <View style={styles.row}>
                       <SquareCard
@@ -27,7 +27,6 @@ const HomeScreen = ({navigation}) => {
                           iconName={'alert-circle-outline'}
                           onCardPressed={()=>{navigation.navigate('Alert')}}/>
                   </View>
-
                   <View style={styles.row}>
                       <SquareCard
                           text={I18n.t('Buttons')}
@@ -40,7 +39,7 @@ const HomeScreen = ({navigation}) => {
                           onCardPressed={()=>{navigation.navigate('Alert')}}/>
                   </View>
 
-              </View>
+
 
               <BigText text={'Explore the components'}/>
 
@@ -58,28 +57,18 @@ const HomeScreen = ({navigation}) => {
 
               <BigText text={'More components'}/>
 
-              <ScrollView
-                  showsHorizontalScrollIndicator={false}
-                  horizontal={true}
-                  style={styles.scrollView}
-                  contentContainerStyle={{paddingHorizontal: 10}}>
-                  <RectangleCard/>
-                  <RectangleCard/>
-                  <RectangleCard/>
-                  <RectangleCard/>
-              </ScrollView>
-
-              <BigText text={'Components again'}/>
-
-              <ScrollView
-                  showsHorizontalScrollIndicator={false}
-                  horizontal={true}
-                  style={styles.scrollView}
-                  contentContainerStyle={{paddingHorizontal: 10}}>
-                  <RectangleCard/>
-                  <RectangleCard/>
-                  <RectangleCard/>
-              </ScrollView>
+              <View style={styles.column2}>
+                  <View style={styles.row}>
+                      <SquareCard
+                          text={I18n.t('Buttons')}
+                          iconName={'radio-button-on'}
+                          onCardPressed={()=>{navigation.navigate('Buttons')}}/>
+                      <SquareCard
+                          text={I18n.t('Alert')}
+                          iconName={'alert-circle-outline'}
+                          onCardPressed={()=>{navigation.navigate('Alert')}}/>
+                  </View>
+              </View>
 
           </ScrollView>
       </SafeAreaView>
@@ -101,19 +90,12 @@ const styles = EStyleSheet.create({
         color: '$onBackground',
         fontSize: '1.5rem',
     },
-    column:{
-        width: "100%",
-        aspectRatio: 1,
-        padding: 10,
-        marginTop: 8,
-        marginBottom: 8,
-    },
     row: {
-        flex: 1,
+        width: "100%",
+        aspectRatio: 2.3,
         flexDirection: 'row',
         justifyContent: 'center',
-        paddingTop: 10,
-        paddingBottom: 10,
+        marginBottom: 20,
     },
     cardStyle: {
         backgroundColor:'$primaryContainer',

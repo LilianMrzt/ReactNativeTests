@@ -1,17 +1,60 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
-import I18n from '@app/assets/i18n/i18n';
-import Icon from 'react-native-vector-icons/Ionicons';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import Material3Button from "@app/ui/components/Material3Button";
+import BottomPopUp from "@app/ui/components/BottomPopUp";
+import Modal from "react-native-modal";
+import BigText from "@app/ui/components/BigText";
+import AlertPopUp from "@app/ui/components/AlertPopUp";
 
 const AlertScreen = () => {
+    const [isModalVisible, setModalVisible] = useState(false);
+    const [isAlertVisible, setAlertVisible] = useState(false);
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
+
+    const toggleAlert = () => {
+        setAlertVisible(!isAlertVisible);
+    };
+
     return (
         <SafeAreaView style={styles.background}>
             <View style={styles.container}>
-                <Text style={styles.text}>
-                    {I18n.t('Greeting')}
-                </Text>
-                <Icon name="home" size={60}/>
+                <View style={{height: 300, justifyContent: 'space-around', alignItems: 'center'}}>
+                    <Material3Button text={'Show Modal'} onButtonPressed={toggleModal}/>
+                    <Material3Button text={'Show Alert'} onButtonPressed={toggleAlert}/>
+                    <Material3Button text={'Show Toast'} onButtonPressed={toggleAlert}/>
+                </View>
+
+
+                <BottomPopUp
+                    isVisible={isModalVisible}
+                    closeModal={() => setModalVisible(false)}
+                    height={'40%'}
+                    content={()=>{
+                        return (
+                            <View style={styles.modalContent}>
+                                <BigText text={"I am the modal content!"}/>
+                                <Material3Button text={'close'} onButtonPressed={()=>{setModalVisible(false)}}/>
+                            </View>
+                        );
+                    }}
+                />
+
+                <AlertPopUp
+                    isVisible={isAlertVisible}
+                    closeModal={() => setAlertVisible(false)}
+                    height={'30%'}
+                    content={()=>{
+                        return (
+                            <View style={styles.modalContent}>
+                                <BigText text={"I am the modal content!"}/>
+                                <Material3Button text={'close'} onButtonPressed={()=>{setAlertVisible(false)}}/>
+                            </View>
+                        );
+                    }}
+                />
             </View>
         </SafeAreaView>
     );
@@ -28,13 +71,19 @@ const styles = EStyleSheet.create({
     },
     container: {
         flex:1,
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
     },
     text: {
         color: '$onBackground',
         fontSize: '1.5rem',
     },
+    modalContent:{
+        flex: 1,
+        padding: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 });
 
 export default AlertScreen;
