@@ -57,17 +57,15 @@ const HomeScreen = ({navigation}) => {
 
               <BigText text={'More components'}/>
 
-              <View style={styles.column2}>
-                  <View style={styles.row}>
-                      <SquareCard
-                          text={I18n.t('Buttons')}
-                          iconName={'radio-button-on'}
-                          onCardPressed={()=>{navigation.navigate('Buttons')}}/>
-                      <SquareCard
-                          text={I18n.t('Alert')}
-                          iconName={'alert-circle-outline'}
-                          onCardPressed={()=>{navigation.navigate('Alert')}}/>
-                  </View>
+              <View style={styles.row}>
+                  <SquareCard
+                      text={I18n.t('Buttons')}
+                      iconName={'radio-button-on'}
+                      onCardPressed={()=>{navigation.navigate('Buttons')}}/>
+                  <SquareCard
+                      text={I18n.t('Alert')}
+                      iconName={'alert-circle-outline'}
+                      onCardPressed={()=>{navigation.navigate('Alert')}}/>
               </View>
 
           </ScrollView>
@@ -96,14 +94,8 @@ const styles = EStyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: 20,
-    },
-    cardStyle: {
-        backgroundColor:'$primaryContainer',
-        height: "100%",
-        aspectRatio: 1,
-        borderRadius: 20,
-        marginRight: 20,
-        marginLeft: 10,
+        paddingLeft: 10,
+        paddingRight: 10,
     },
     scrollView: {
         height: 150,

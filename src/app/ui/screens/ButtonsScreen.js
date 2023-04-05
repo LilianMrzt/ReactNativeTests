@@ -5,6 +5,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import Material3Button from '@app/ui/components/Material3Button';
 import Material3IconButton from "@app/ui/components/Material3IconButton";
 import Material3FAB from "@app/ui/components/Material3FAB";
+import Icons from "@app/assets/Icons"
 
 const ButtonsScreen = () => {
   return (
@@ -15,16 +16,16 @@ const ButtonsScreen = () => {
                       {I18n.t('Buttons')}
                   </Text>
                   <Material3Button text={'Click'}/>
-                  <Material3IconButton text={'Enabled'} icon={'add'}/>
-                  <Material3IconButton text={'Enabled'} icon={'home'}/>
+                  <Material3IconButton text={'Enabled'} icon={Icons.add}/>
+                  <Material3IconButton text={'Enabled'} icon={Icons.home}/>
 
               </View>
               <View style={{width:'100%', height: 130, position:'absolute', bottom: 0}}>
                   <View style={{flex:1}}>
-                      <Material3FAB icon={'edit'}/>
+                      <Material3FAB icon={Icons.edit}/>
                   </View>
                   <View style={{flex:1}}>
-                      <Material3FAB icon={'add'}/>
+                      <Material3FAB icon={Icons.add}/>
                   </View>
               </View>
 

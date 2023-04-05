@@ -23,7 +23,7 @@ const styles = EStyleSheet.create({
     cardStyle: {
         backgroundColor:'$primaryContainer',
         height: "100%",
-        aspectRatio: 1,
+        flex: 0.5,
         borderRadius: 20,
         marginRight: 10,
         marginLeft: 10,

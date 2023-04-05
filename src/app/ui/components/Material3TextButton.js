@@ -3,14 +3,17 @@ import {Text, TouchableOpacity} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import PropTypes from 'prop-types';
 
-const Material3Button = ({text, onButtonPressed}) => {
-  return (
-      <TouchableOpacity style={styles.button} onPress={onButtonPressed}>
-            <Text style={styles.text}>
+const Material3TextButton = ({text, fontSize, fontColor}) => {
+    return (
+        <TouchableOpacity style={styles.button}>
+            <Text style={[styles.text, {
+                fontSize: fontSize,
+                color : fontColor,
+            }]}>
                 {text}
             </Text>
-      </TouchableOpacity>
-  );
+        </TouchableOpacity>
+    );
 };
 
 const styles = EStyleSheet.create({
@@ -20,18 +23,14 @@ const styles = EStyleSheet.create({
         fontFamily: 'Roboto-Medium',
     },
     button:{
-        paddingLeft:24,
-        paddingRight:24,
-        backgroundColor:'$primaryContainer',
-        borderRadius: 20,
         height: 40,
-        alignItem: 'center',
         justifyContent: 'center',
-        elevation : 1,
+        marginTop: 5,
+        marginBottom: 5,
     },
 });
 
-Material3Button.propTypes = {
+Material3TextButton.propTypes = {
     text: PropTypes.string,
 };
-export default Material3Button;
+export default Material3TextButton;
